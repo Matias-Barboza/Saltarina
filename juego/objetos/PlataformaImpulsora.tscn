@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://recursos/Sfx/Jump.wav" type="AudioStream" id=1]
+[ext_resource path="res://recursos/Items/spring_in.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Items/spring.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Items/spring_out.png" type="Texture" id=4]
+[ext_resource path="res://juego/objetos/PlataformaImpulsora.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 76, 12 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Impulso"
+length = 0.65
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteIdle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.17, 0.65 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.17, 0.42 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SpriteOut:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.42, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteIdle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SpriteOut:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[node name="PlataformaImpulsora" type="StaticBody2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 5 )
+
+[node name="SpriteIdle" type="Sprite" parent="."]
+position = Vector2( 0, -38 )
+texture = ExtResource( 3 )
+
+[node name="SpriteIn" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -28 )
+texture = ExtResource( 2 )
+
+[node name="SpriteOut" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -54 )
+texture = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "SFX"
+
+[node name="DetectorImpulso" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorImpulso"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, -54 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -12 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Impulso = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/idle = SubResource( 5 )
+
+[connection signal="body_entered" from="DetectorImpulso" to="." method="_on_DetectorImpulso_body_entered"]

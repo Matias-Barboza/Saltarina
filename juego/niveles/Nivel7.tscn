@@ -1,0 +1,248 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/objetos/MonedaBronce.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/personaje/PersonajePrincipal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/objetos/MonedaOro.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/objetos/Pinchos.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/plataformas/PlataformaLargaCesped.tscn" type="PackedScene" id=9]
+[ext_resource path="res://juego/plataformas/PlataformaLargaPiedra.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/plataformas/PlataformaNieve.tscn" type="PackedScene" id=11]
+[ext_resource path="res://juego/plataformas/PlataformaTrampa.tscn" type="PackedScene" id=12]
+[ext_resource path="res://juego/plataformas/PlataformaCortaPiedra.tscn" type="PackedScene" id=13]
+[ext_resource path="res://juego/enemigos/SierrinVertical.tscn" type="PackedScene" id=14]
+[ext_resource path="res://juego/plataformas/PlataformaPiedra.tscn" type="PackedScene" id=15]
+[ext_resource path="res://juego/plataformas/PlataformaLargaNieve.tscn" type="PackedScene" id=16]
+[ext_resource path="res://juego/enemigos/Pinchon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://juego/enemigos/Volon.tscn" type="PackedScene" id=18]
+
+[node name="Nivel7" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel7.tscn"
+
+[node name="PlataformaTrampa" parent="PlataformasTrampa" index="0" instance=ExtResource( 12 )]
+position = Vector2( 2008, 493 )
+
+[node name="PlataformaTrampa2" parent="PlataformasTrampa" index="1" instance=ExtResource( 12 )]
+position = Vector2( 1425, 742 )
+
+[node name="PlataformaTrampa3" parent="PlataformasTrampa" index="2" instance=ExtResource( 12 )]
+position = Vector2( 1727, 612 )
+
+[node name="PlataformaNieve" parent="PlataformasNormales" index="0" instance=ExtResource( 11 )]
+position = Vector2( 1138, 818 )
+
+[node name="PlataformaNieve2" parent="PlataformasNormales" index="1" instance=ExtResource( 11 )]
+position = Vector2( 2260, 387 )
+
+[node name="PlataformaPiedra" parent="PlataformasNormales" index="2" instance=ExtResource( 15 )]
+position = Vector2( 3376, 147 )
+
+[node name="PlataformaCortaPiedra" parent="PlataformasCortas" index="0" instance=ExtResource( 13 )]
+position = Vector2( 2514, 279 )
+
+[node name="PlataformaCortaPiedra2" parent="PlataformasCortas" index="1" instance=ExtResource( 13 )]
+position = Vector2( 2734, 213 )
+
+[node name="PlataformaCortaPiedra3" parent="PlataformasCortas" index="2" instance=ExtResource( 13 )]
+position = Vector2( 2948, 138 )
+
+[node name="PlataformaLargaCesped" parent="PlataformasLargas" index="0" instance=ExtResource( 9 )]
+position = Vector2( 172, 449 )
+
+[node name="PlataformaLargaCesped2" parent="PlataformasLargas" index="1" instance=ExtResource( 9 )]
+position = Vector2( 529, 870 )
+
+[node name="PlataformaLarga" parent="PlataformasLargas" index="2" instance=ExtResource( 10 )]
+position = Vector2( 860, 776 )
+
+[node name="PlataformaLarga2" parent="PlataformasLargas" index="3" instance=ExtResource( 10 )]
+position = Vector2( 860, 477 )
+
+[node name="PlataformaLarga3" parent="PlataformasLargas" index="4" instance=ExtResource( 16 )]
+position = Vector2( 3691, 149 )
+
+[node name="PlataformaLarga4" parent="PlataformasLargas" index="5" instance=ExtResource( 16 )]
+position = Vector2( 4008, 149 )
+
+[node name="PlataformaLarga5" parent="PlataformasLargas" index="6" instance=ExtResource( 16 )]
+position = Vector2( 4389, 149 )
+
+[node name="SierrinVertical" parent="Enemigos" index="0" instance=ExtResource( 14 )]
+position = Vector2( 2404, 354 )
+
+[node name="SierrinVertical2" parent="Enemigos" index="1" instance=ExtResource( 14 )]
+position = Vector2( 2627, 247 )
+
+[node name="SierrinVertical3" parent="Enemigos" index="2" instance=ExtResource( 14 )]
+position = Vector2( 2843, 169 )
+
+[node name="Pinchon" parent="Enemigos" index="3" instance=ExtResource( 17 )]
+position = Vector2( 3550, 129 )
+
+[node name="Pinchon2" parent="Enemigos" index="4" instance=ExtResource( 17 )]
+position = Vector2( 4149, 128 )
+
+[node name="Volon" parent="Enemigos" index="5" instance=ExtResource( 18 )]
+position = Vector2( 3144, 114 )
+
+[node name="Pinchos5" parent="Daño" index="0" instance=ExtResource( 8 )]
+position = Vector2( 754, 506 )
+es_trampa = true
+
+[node name="Pinchos8" parent="Daño" index="1" instance=ExtResource( 8 )]
+position = Vector2( 920, 506 )
+es_trampa = true
+
+[node name="Pinchos9" parent="Daño" index="2" instance=ExtResource( 8 )]
+position = Vector2( 975, 506 )
+es_trampa = true
+
+[node name="Pinchos6" parent="Daño" index="3" instance=ExtResource( 8 )]
+position = Vector2( 808, 506 )
+es_trampa = true
+
+[node name="Pinchos7" parent="Daño" index="4" instance=ExtResource( 8 )]
+position = Vector2( 864, 506 )
+es_trampa = true
+
+[node name="Pinchos" parent="Daño" index="5" instance=ExtResource( 8 )]
+position = Vector2( 660, 836 )
+
+[node name="Pinchos2" parent="Daño" index="6" instance=ExtResource( 8 )]
+position = Vector2( 398, 837 )
+
+[node name="Pinchos3" parent="Daño" index="7" instance=ExtResource( 8 )]
+position = Vector2( 452, 837 )
+
+[node name="Pinchos4" parent="Daño" index="8" instance=ExtResource( 8 )]
+position = Vector2( 607, 837 )
+
+[node name="Pinchos10" parent="Daño" index="9" instance=ExtResource( 8 )]
+position = Vector2( 992, 742 )
+
+[node name="Pinchos11" parent="Daño" index="10" instance=ExtResource( 8 )]
+position = Vector2( 941, 742 )
+
+[node name="Pinchos12" parent="Daño" index="11" instance=ExtResource( 8 )]
+position = Vector2( 888, 742 )
+
+[node name="Pinchos13" parent="Daño" index="12" instance=ExtResource( 8 )]
+position = Vector2( 836, 742 )
+
+[node name="Pinchos14" parent="Daño" index="13" instance=ExtResource( 8 )]
+position = Vector2( 781, 742 )
+
+[node name="Pinchos15" parent="Daño" index="14" instance=ExtResource( 8 )]
+position = Vector2( 727, 742 )
+
+[node name="MonedaOro" parent="Monedas" index="0" instance=ExtResource( 7 )]
+position = Vector2( 531, 633 )
+
+[node name="MonedaPlata" parent="Monedas" index="1" instance=ExtResource( 2 )]
+position = Vector2( 532, 550 )
+
+[node name="MonedaPlata2" parent="Monedas" index="2" instance=ExtResource( 2 )]
+position = Vector2( 810, 570 )
+
+[node name="MonedaPlata5" parent="Monedas" index="3" instance=ExtResource( 2 )]
+position = Vector2( 810, 631 )
+
+[node name="MonedaPlata6" parent="Monedas" index="4" instance=ExtResource( 2 )]
+position = Vector2( 863, 631 )
+
+[node name="MonedaPlata7" parent="Monedas" index="5" instance=ExtResource( 2 )]
+position = Vector2( 863, 571 )
+
+[node name="MonedaPlata8" parent="Monedas" index="6" instance=ExtResource( 2 )]
+position = Vector2( 917, 570 )
+
+[node name="MonedaPlata9" parent="Monedas" index="7" instance=ExtResource( 2 )]
+position = Vector2( 916, 630 )
+
+[node name="MonedaPlata10" parent="Monedas" index="8" instance=ExtResource( 2 )]
+position = Vector2( 968, 630 )
+
+[node name="MonedaPlata11" parent="Monedas" index="9" instance=ExtResource( 2 )]
+position = Vector2( 968, 571 )
+
+[node name="MonedaPlata3" parent="Monedas" index="10" instance=ExtResource( 2 )]
+position = Vector2( 755, 570 )
+
+[node name="MonedaPlata4" parent="Monedas" index="11" instance=ExtResource( 2 )]
+position = Vector2( 755, 631 )
+
+[node name="MonedaBronce" parent="Monedas" index="12" instance=ExtResource( 3 )]
+position = Vector2( 531, 479 )
+
+[node name="MonedaOro2" parent="Monedas" index="13" instance=ExtResource( 7 )]
+position = Vector2( 2135, 296 )
+
+[node name="MonedaPlata12" parent="Monedas" index="14" instance=ExtResource( 2 )]
+position = Vector2( 1836, 401 )
+
+[node name="MonedaBronce2" parent="Monedas" index="15" instance=ExtResource( 3 )]
+position = Vector2( 1539, 554 )
+
+[node name="MonedaOro3" parent="Monedas" index="16" instance=ExtResource( 7 )]
+position = Vector2( 3203, -77 )
+
+[node name="MonedaPlata13" parent="Monedas" index="17" instance=ExtResource( 2 )]
+position = Vector2( 3143, -76 )
+
+[node name="MonedaBronce3" parent="Monedas" index="18" instance=ExtResource( 3 )]
+position = Vector2( 3081, -76 )
+
+[node name="MonedaOro4" parent="Monedas" index="19" instance=ExtResource( 7 )]
+position = Vector2( 3203, -134 )
+
+[node name="MonedaPlata14" parent="Monedas" index="20" instance=ExtResource( 2 )]
+position = Vector2( 3143, -133 )
+
+[node name="MonedaBronce4" parent="Monedas" index="21" instance=ExtResource( 3 )]
+position = Vector2( 3081, -133 )
+
+[node name="MonedaOro5" parent="Monedas" index="22" instance=ExtResource( 7 )]
+position = Vector2( 3859, 84 )
+
+[node name="MonedaPlata15" parent="Monedas" index="23" instance=ExtResource( 2 )]
+position = Vector2( 3919, 87 )
+
+[node name="MonedaBronce5" parent="Monedas" index="24" instance=ExtResource( 3 )]
+position = Vector2( 3793, 87 )
+
+[node name="MonedaOro6" parent="Monedas" index="25" instance=ExtResource( 7 )]
+position = Vector2( 3859, 27 )
+
+[node name="MonedaPlata16" parent="Monedas" index="26" instance=ExtResource( 2 )]
+position = Vector2( 3919, 30 )
+
+[node name="MonedaBronce6" parent="Monedas" index="27" instance=ExtResource( 3 )]
+position = Vector2( 3793, 30 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 4 )]
+position = Vector2( 527, 757 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 4 )]
+position = Vector2( 1133, 732 )
+
+[node name="ZanahoriaLlave3" parent="Zanahorias" index="2" instance=ExtResource( 4 )]
+position = Vector2( 2505, 201 )
+
+[node name="ZanahoriaLlave4" parent="Zanahorias" index="3" instance=ExtResource( 4 )]
+position = Vector2( 2732, 109 )
+
+[node name="ZanahoriaLlave5" parent="Zanahorias" index="4" instance=ExtResource( 4 )]
+position = Vector2( 2937, 44 )
+
+[node name="ZanahoriaLlave6" parent="Zanahorias" index="5" instance=ExtResource( 4 )]
+position = Vector2( 3852, -50 )
+
+[node name="Saltarina" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( 64, 373 )
+
+[node name="Portal" parent="." index="12" instance=ExtResource( 6 )]
+position = Vector2( 4497, 120 )
+proximo_nivel = "res://juego/niveles/Nivel8.tscn"

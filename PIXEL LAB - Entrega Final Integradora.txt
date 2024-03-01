@@ -1,0 +1,21 @@
+PIXEL LAB - Entrega Final Integrador
+Nombre y Apellido: Matías Barboza.
+Nombre del Juego: Jumping with Saltarina.
+Mecanica Intermedia seleccionada (una): Sierrin.
+Mecanica Avanzada seleccionada (una): Dash.
+
+Contanos en pocas palabras como pensaste la implementación de las nuevas mecanicas:
+ Observaciones sobre la implementacion de la mecanica Intermedia:
+Para la mecanica intermedia, planteé a Sierrin en base a lo que habiamos realizado con Volón, aprovechando su parecido.
+Planteé a un Sierrin como escena base, que contiene los elementos necesarios para las escenas heredadas que realicé:
+- Sierrin estatico, que tiene una animación del movimiento de los dientes de sierra, pero no tiene movimiento del cuerpo en sí
+en los ejes.
+- Sierrin vertical y horizontal, realizan la misma animación que sierrin estatico para sus dientes, pero la diferencia es que
+contienen en el animation player una animación a su vez para el movimiento en los ejes y o x, respectivamente. Para estos fué necesario
+al igual que en Volón, aplicar movimiento tambíen al colisionador. Para Sierrin vertical implementé un booleano para invertir su recorrido.
+
+ Observaciones sobre la implementacion de la mecanica Avanzada:
+Para la mecanica avanzada, del Dash, cree una funcion dash, y un booleano para saber cuando puede dashear, asociado a dos timers, un timer
+controla el movimiento en sí del dash, y el otro timer controla el enfriamiento que da la posibilidad de repetir el movimiento. Cree una animación
+de recarga del dash que está asociado al HUD, donde se visualiza la recarga intentando dar a entender al usuario si se puede volver a usar. Tiene un pequeño
+sistema de particulas de humo cada vez que se realiza el movimiento.
